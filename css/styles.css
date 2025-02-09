@@ -123,6 +123,9 @@ display: none;
     display: block;
     fill: #2f2f37;
 }
+
+
+
 @media screen and (min-width: 768px) {
     .burger-btn {
         display: none;
@@ -223,6 +226,160 @@ display: none;
        letter-spacing: 0.02em;
 }
 }
+/* mobile-menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.mobile-menu-container {
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+.mobile-menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+        background-color: #e7e9fc;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-close:hover {
+        background-color: #404bbf;
+        border: none;
+        fill: #ffffff;
+    }
+
+.mobile-menu-close:focus {
+        background-color: #404bbf;
+        border: none;
+        fill: #ffffff;
+    }
+   .button-close {
+       transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+  .mobile-menu-nav {
+   margin-bottom: auto;
+  }
+    .mobile-menu-navigation {
+        display: flex;
+            flex-direction: column;
+            gap: 40px;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            color: #2e2f42;
+            
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        .mobile-menu-navigation:hover,
+        .mobile-menu-navigation:focus
+         {
+            color: #404bbf;
+        }
+    
+        .mobile-menu-navigation:active {
+            color: #404bbf;
+            text-decoration: underline;
+        }
+       
+        .mobile-menu-contacts ul {
+            display: flex;
+            font-style: normal;
+            flex-direction: column;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            gap: 24px;
+        }
+    
+        .mobile-menu-contacts,
+        .mobile-menu-contacts-link {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+    
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #434455;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        .mobile-menu-contacts,
+        .mobile-menu-contacts-link:hover {
+            color: #404bbf;
+        }
+    
+        .mobile-menu-contacts,
+        .mobile-menu-contacts-link:focus {
+            color: #404bbf;
+        }
+   .mobile-menu-social-list {
+    display: flex;
+   justify-content: center;
+    gap: 40px;
+    margin-top: 48px;
+    
+   }
+   .mobile-menu-social-iteam {
+    width: 40px;
+        height: 40px;
+        background-color: #4d5ae5;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   .mobile-menu-social-link:hover {
+       background-color: #404bbf;
+   }
+
+   .mobile-menu-social-link:focus {
+       background-color: #404bbf;
+   }
+
+   .mobile-menu-social-icon {
+       fill: #f4f4fd;
+
+   }
+.mobile-menu-nav {
+    margin-bottom: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
  /* main */
  
  .main-page .container {
@@ -240,7 +397,7 @@ display: none;
      background-repeat: no-repeat;
      background-position: center;
      background-size: cover;
-
+max-width: 320px;
      margin: 0 auto;
 
  }
@@ -287,6 +444,7 @@ display: none;
                 url(../images/tablet-Dark-bg.jpg);
             background-repeat: no-repeat;
             background-position: center;
+            max-width: 768px;
             background-size: cover;
     }
         .main-page-title {
@@ -528,7 +686,7 @@ display: none;
 }
 .ourportfolio-list {
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
     gap: 48px;
 }
 
@@ -536,6 +694,9 @@ display: none;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     
 }
+ .cover-text {
+    display: none;
+ }
  .portfolio-content {
      padding: 32px 16px;
      border: 1px solid #e7e9fc;
@@ -667,7 +828,7 @@ text-align: center;
 .form-input {
     border: 1px solid #ffffff;
     border-radius: 4px;
-    width: 264px;
+    width: 288px;
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     font-weight: 400;
@@ -725,6 +886,7 @@ text-align: center;
         align-items:flex-start;
         gap: 24px;
         row-gap: 72px;
+        margin-left: 108px;
     }
       
         .footer-text {
@@ -734,19 +896,21 @@ text-align: center;
         .subscribe-text {
             text-align: left;
         }
-        .subscribe-box {
-           
-        }
+        
+         .form-input {
+            width: 264px;
+         }
+    
 .email-form {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 24px;
 }
+}
 @media screen and (min-width: 1158px)
 {
     .footer {
-           
             padding-top: 100px;
             padding-bottom: 100px;
         }
@@ -759,10 +923,15 @@ text-align: center;
         }
     
         .first-box {
-            margin-right: 120px;
-        }   
+            margin-right: 96px;
+        } 
+                .subscribe-box {
+                    margin-left: 56px;
                 }
-}
+                 }
+                 
+/* modal window  */
+/*
 .backdrop.is-open {
     opacity: 1;
     visibility: visible;
@@ -895,23 +1064,23 @@ text-align: center;
                   .model-textarea:focus {
                       border-color: #4D5AE5;
                   }
-                                  .checkbox-wrape {
-                                      margin-bottom: 24px;
+                 .checkbox-wrape {
+                        margin-bottom: 24px;
                                   }
                 
-                                  .modal-check-item {
-                                      width: 16px;
-                                      height: 16px;
-                                      border-radius: 2px;
-                                      border: 1px solid rgba(46, 47, 66, 0.4);
-                                      margin-right: 8px;
-                                      display: inline-flex;
-                                      align-items: center;
-                                      justify-content: center;
-                                      fill: transparent;
-                                      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                                          border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                                          fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                 .modal-check-item {
+                         width: 16px;
+                         height: 16px;
+                         border-radius: 2px;
+                         border: 1px solid rgba(46, 47, 66, 0.4);
+                        margin-right: 8px;
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         fill: transparent;
+                        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
                                   }
                 
                                   .modal-check:checked+.modal-check-text .modal-check-item {
@@ -930,48 +1099,49 @@ text-align: center;
                                       align-items: center;
                                   }
                         .privacy-policy {
-                                                                     color: #4d5ae5;
-                                                                 }
+                         color: #4d5ae5;
+                                     }
                                 
-                                                                 .modal-check-text a {
-                                                                     text-decoration: underline;
-                                                                 }
+                        .modal-check-text a {
+                         text-decoration: underline;
+                                 }
                                 
-                                                                 .form-button-send {
-                                                                     display: block;
-                                                                     border-radius: 4px;
-                                                                     padding: 16px 32px;
-                                                                     min-width: 169px;
-                                                                     height: 56px;
-                                                                     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-                                                                     background: #4d5ae5;
-                                                                     border: none;
-                                                                     cursor: pointer;
-                                                                     font-weight: 500;
-                                                                     font-size: 16px;
-                                
-                                                                     line-height: 1.5;
-                                                                     letter-spacing: 0.04em;
-                                                                     text-align: center;
-                                                                     color: #fff;
-                                                                     margin-left: 44px;
-                                                                     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-                                                                 }
-                                
-                                                                 .form-button-send:hover {
-                                                                     background: #404bbf;
-                                                                 }
-                                
-                                                                 .form-button-send:focus {
-                                                                     background: #404bbf;} 
-
-                                    @media screen and (min-width: 768px) {
-                                        .modal {
-                                            padding-left: 24px;
-                                            padding-right: 24px;
-                                            width: 408px;
-                                                min-height: 584px;
-                                        }
+                         .form-button-send {
+                            display: block;
+                            border-radius: 4px;
+                            padding: 16px 32px;
+                            min-width: 169px;
+                            height: 56px;
+                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+                            background: #4d5ae5;
+                            border: none;
+                            cursor: pointer;
+                            font-weight: 500;
+                            font-size: 16px;
+                        
+                            line-height: 1.5;
+                            letter-spacing: 0.04em;
+                            text-align: center;
+                            color: #fff;
+                            margin-left: 44px;
+                            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+                        
+                        .form-button-send:hover {
+                            background: #404bbf;
+                        }
+                        
+                        .form-button-send:focus {
+                            background: #404bbf;
+                        }
+                        
+                        @media screen and (min-width: 768px) {
+                            .modal {
+                                padding-left: 24px;
+                                padding-right: 24px;
+                                width: 408px;
+                                min-height: 584px;
+                            }
 .form-button-send {
 margin-left: 95px;
 }
